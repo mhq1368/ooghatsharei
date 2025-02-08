@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ooghatsharei/Components/fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // تعریف تم‌های روشن و تاریک
@@ -18,7 +19,7 @@ final ThemeData darkTheme = ThemeData(
     colorScheme: ColorScheme(
         brightness: Brightness.dark,
         primary: Color.fromARGB(255, 66, 85, 80),
-        onPrimary: Color(0xFFC1DBD4),
+        onPrimary: Color.fromARGB(255, 255, 255, 255),
         secondary: Color(0xFFC1DBD4),
         onSecondary: Color(0xFFC1DBD4),
         error: Color(0xFFC1DBD4),
@@ -28,7 +29,7 @@ final ThemeData darkTheme = ThemeData(
     drawerTheme: DrawerThemeData(
       backgroundColor: Color.fromARGB(255, 66, 85, 80),
     ),
-    // brightness: Brightness.dark,
+    textTheme: TextTheme(displayLarge: TextStyle(color: Colors.amberAccent)),
     scaffoldBackgroundColor: Color.fromARGB(255, 66, 85, 80),
     appBarTheme: AppBarTheme(
         elevation: 3,

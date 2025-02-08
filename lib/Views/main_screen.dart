@@ -102,6 +102,7 @@ class _MainScreenState extends State<MainScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            // باکس جستجو
             Padding(
               padding: EdgeInsets.fromLTRB(25, 25, 25, 25),
               child: SizedBox(
@@ -176,7 +177,11 @@ class _MainScreenState extends State<MainScreen> {
                           itemBuilder: (context, index) {
                             return Column(
                               children: [
-                                Text(shamsidate()),
+                                Text(shamsidate(),
+                                    style: SettingsFonts.datetimefont),
+                                SizedBox(
+                                  height: appsize.height / 25,
+                                ),
                                 //افق
                                 Container(
                                   height: appsize.height / 20,

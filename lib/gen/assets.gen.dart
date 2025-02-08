@@ -12,45 +12,45 @@ import 'package:flutter/widgets.dart';
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
-  /// File path: assets/fonts/Peyda-Black.ttf
-  String get peydaBlack => 'assets/fonts/Peyda-Black.ttf';
+  /// File path: assets/fonts/PeydaFaNum-Black.ttf
+  String get peydaFaNumBlack => 'assets/fonts/PeydaFaNum-Black.ttf';
 
-  /// File path: assets/fonts/Peyda-Bold.ttf
-  String get peydaBold => 'assets/fonts/Peyda-Bold.ttf';
+  /// File path: assets/fonts/PeydaFaNum-Bold.ttf
+  String get peydaFaNumBold => 'assets/fonts/PeydaFaNum-Bold.ttf';
 
-  /// File path: assets/fonts/Peyda-ExtraBold.ttf
-  String get peydaExtraBold => 'assets/fonts/Peyda-ExtraBold.ttf';
+  /// File path: assets/fonts/PeydaFaNum-ExtraBold.ttf
+  String get peydaFaNumExtraBold => 'assets/fonts/PeydaFaNum-ExtraBold.ttf';
 
-  /// File path: assets/fonts/Peyda-ExtraLight.ttf
-  String get peydaExtraLight => 'assets/fonts/Peyda-ExtraLight.ttf';
+  /// File path: assets/fonts/PeydaFaNum-ExtraLight.ttf
+  String get peydaFaNumExtraLight => 'assets/fonts/PeydaFaNum-ExtraLight.ttf';
 
-  /// File path: assets/fonts/Peyda-Light.ttf
-  String get peydaLight => 'assets/fonts/Peyda-Light.ttf';
+  /// File path: assets/fonts/PeydaFaNum-Light.ttf
+  String get peydaFaNumLight => 'assets/fonts/PeydaFaNum-Light.ttf';
 
-  /// File path: assets/fonts/Peyda-Medium.ttf
-  String get peydaMedium => 'assets/fonts/Peyda-Medium.ttf';
+  /// File path: assets/fonts/PeydaFaNum-Medium.ttf
+  String get peydaFaNumMedium => 'assets/fonts/PeydaFaNum-Medium.ttf';
 
-  /// File path: assets/fonts/Peyda-Regular.ttf
-  String get peydaRegular => 'assets/fonts/Peyda-Regular.ttf';
+  /// File path: assets/fonts/PeydaFaNum-Regular.ttf
+  String get peydaFaNumRegular => 'assets/fonts/PeydaFaNum-Regular.ttf';
 
-  /// File path: assets/fonts/Peyda-SemiBold.ttf
-  String get peydaSemiBold => 'assets/fonts/Peyda-SemiBold.ttf';
+  /// File path: assets/fonts/PeydaFaNum-SemiBold.ttf
+  String get peydaFaNumSemiBold => 'assets/fonts/PeydaFaNum-SemiBold.ttf';
 
-  /// File path: assets/fonts/Peyda-Thin.ttf
-  String get peydaThin => 'assets/fonts/Peyda-Thin.ttf';
+  /// File path: assets/fonts/PeydaFaNum-Thin.ttf
+  String get peydaFaNumThin => 'assets/fonts/PeydaFaNum-Thin.ttf';
 
   /// List of all assets
   List<String> get values => [
-        peydaBlack,
-        peydaBold,
-        peydaExtraBold,
-        peydaExtraLight,
-        peydaLight,
-        peydaMedium,
-        peydaRegular,
-        peydaSemiBold,
-        peydaThin
-      ];
+    peydaFaNumBlack,
+    peydaFaNumBold,
+    peydaFaNumExtraBold,
+    peydaFaNumExtraLight,
+    peydaFaNumLight,
+    peydaFaNumMedium,
+    peydaFaNumRegular,
+    peydaFaNumSemiBold,
+    peydaFaNumThin,
+  ];
 }
 
 class $AssetsIconsGen {
@@ -99,19 +99,19 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        a1629506,
-        mic,
-        pen,
-        aboutus,
-        exit,
-        homeicon,
-        logo,
-        menuicon,
-        searchicon,
-        share,
-        usericon,
-        writeicon
-      ];
+    a1629506,
+    mic,
+    pen,
+    aboutus,
+    exit,
+    homeicon,
+    logo,
+    menuicon,
+    searchicon,
+    share,
+    usericon,
+    writeicon,
+  ];
 }
 
 class $AssetsImagesGen {
@@ -138,12 +138,18 @@ class $AssetsImagesGen {
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [bg, posterIMG, apppoter, img1, img2, profile];
+  List<AssetGenImage> get values => [
+    bg,
+    posterIMG,
+    apppoter,
+    img1,
+    img2,
+    profile,
+  ];
 }
 
 class Assets {
-  Assets._();
+  const Assets._();
 
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
@@ -151,11 +157,7 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  });
+  const AssetGenImage(this._assetName, {this.size, this.flavors = const {}});
 
   final String _assetName;
 
@@ -183,7 +185,7 @@ class AssetGenImage {
     bool gaplessPlayback = true,
     bool isAntiAlias = false,
     String? package,
-    FilterQuality filterQuality = FilterQuality.low,
+    FilterQuality filterQuality = FilterQuality.medium,
     int? cacheWidth,
     int? cacheHeight,
   }) {
@@ -215,15 +217,8 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider({
-    AssetBundle? bundle,
-    String? package,
-  }) {
-    return AssetImage(
-      _assetName,
-      bundle: bundle,
-      package: package,
-    );
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
   }
 
   String get path => _assetName;

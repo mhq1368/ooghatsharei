@@ -36,16 +36,16 @@ flutter:
   fonts:
       - family: Peyda-B
         fonts:
-          - asset: assets/fonts/Peyda-Black.ttf
+          - asset: assets/fonts/PeydaFaNum-Black.ttf
       - family: Peyda-M
         fonts:
-          - asset: assets/fonts/Peyda-Medium.ttf    
+          - asset: assets/fonts/PeydaFaNum-Medium.ttf    
       - family: Peyda-L
         fonts:
-          - asset: assets/fonts/Peyda-Light.ttf
+          - asset: assets/fonts/PeydaFaNum-Light.ttf
       - family: Peyda-R
         fonts:
-          - asset: assets/fonts/Peyda-Regular.ttf   
+          - asset: assets/fonts/PeydaFaNum-Regular.ttf   
       - family: Peyda-SB
         fonts:
-          - asset: assets/fonts/Peyda-SemiBold.ttf  
+          - asset: assets/fonts/PeydaFaNum-SemiBold.ttf  

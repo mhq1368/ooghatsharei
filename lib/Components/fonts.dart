@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ooghatsharei/Controllers/theme_controller.dart';
 
 class SettingsFonts {
   static const TextStyle loadingtextstyle = TextStyle(
@@ -33,4 +35,9 @@ class SettingsFonts {
     fontWeight: FontWeight.w600,
     fontSize: 16,
   );
+  static const TextStyle datetimefont = TextStyle(
+      fontFamily: "Peyda-SB",
+      fontWeight: FontWeight.w600,
+      fontSize: 20,
+      color: Color.fromARGB(221, 255, 255, 255));
 }
