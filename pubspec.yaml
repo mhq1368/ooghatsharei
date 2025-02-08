@@ -20,6 +20,7 @@ dependencies:
   dio: ^5.8.0+1
   shared_preferences: ^2.5.1
   shamsi_date: ^1.0.4
+  flutter_widget_from_html: ^0.15.3
 
 dev_dependencies:
   flutter_test:

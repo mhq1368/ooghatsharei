@@ -1,8 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ooghatsharei/Components/fonts.dart';
 import 'package:ooghatsharei/Components/imgconstpasth.dart';
 import 'package:ooghatsharei/Components/stringsconst.dart';
+import 'package:ooghatsharei/Views/about_screen.dart';
 import 'package:ooghatsharei/Widgets/divider_widget.dart';
 import 'package:ooghatsharei/Widgets/divider_widget2.dart';
 import 'package:quickalert/quickalert.dart';
@@ -25,7 +27,9 @@ Drawer drawerApp(Size appsize, BuildContext context) {
         ),
         MyDivider(appWidth: appsize.width),
         ListTile(
-          onTap: () {},
+          onTap: () {
+            Get.off(() => AboutPage());
+          },
           title: Text(
             StringsConst.aboutus,
             style: SettingsFonts.drawerMenuItems,

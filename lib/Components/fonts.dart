@@ -38,4 +38,12 @@ class SettingsFonts {
       fontWeight: FontWeight.w600,
       fontSize: 20,
       color: Color.fromARGB(221, 255, 255, 255));
+
+  static const TextStyle aboutMeStyle = TextStyle(
+    fontFamily: "Peyda-M",
+    fontWeight: FontWeight.w600,
+    // color: Color.fromARGB(255, 0, 0, 0),
+    fontSize: 16,
+    height: 2,
+  );
 }
