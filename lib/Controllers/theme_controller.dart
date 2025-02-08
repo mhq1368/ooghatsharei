@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ooghatsharei/Components/fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // تعریف تم‌های روشن و تاریک

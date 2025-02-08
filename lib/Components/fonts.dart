@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:ooghatsharei/Controllers/theme_controller.dart';
 
 class SettingsFonts {
   static const TextStyle loadingtextstyle = TextStyle(
