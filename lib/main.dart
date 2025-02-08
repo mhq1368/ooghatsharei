@@ -23,11 +23,6 @@ class MyApp extends StatelessWidget {
         locale: Locale('fa'),
         theme: lightTheme,
         darkTheme: darkTheme,
-        home: SplashScreen()
-        //     MainScreen(
-        //   heightsize: heightsize,
-        //   widthsize: widthsize,
-        // )
-        );
+        home: SplashScreen());
   }
 }
