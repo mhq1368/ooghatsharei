@@ -4,7 +4,6 @@ import 'package:ooghatsharei/Model/azan_model.dart';
 import 'package:ooghatsharei/services/dioservices.dart';
 
 class AzanController extends GetxController {
- 
   Rx<AzanModel> azanList = AzanModel().obs;
   RxBool loading = false.obs;
   @override
@@ -20,8 +19,6 @@ class AzanController extends GetxController {
 
     if (response.statusCode == 200) {
       azanList.value = AzanModel.fromJson(response.data);
-
-     
 
       loading.value = false;
     }

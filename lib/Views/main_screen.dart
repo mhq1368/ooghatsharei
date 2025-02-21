@@ -104,15 +104,27 @@ class _MainScreenState extends State<MainScreen> {
                 controller: _cityname,
                 showCursor: true,
                 decoration: InputDecoration(
-                    filled: true,
-                    hintText: "نام شهر",
-                    hintStyle: SettingsFonts.timetext,
-                    fillColor: Colors.blueGrey,
-                    prefixIcon: Icon(Icons.location_on),
-                    prefixIconColor: Colors.white,
-                    focusColor: Colors.white,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(100))),
+                  filled: true,
+                  hintText: "نام شهر",
+                  hintStyle: SettingsFonts.timetext,
+                  fillColor: Colors.blueGrey,
+                  prefixIcon: Icon(Icons.location_on),
+                  prefixIconColor: Colors.white,
+                  focusColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(100),
+                    borderSide: BorderSide(color: Colors.transparent),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15), // تنظیم radius
+                    borderSide:
+                        BorderSide(color: Colors.transparent), // حذف خط دور
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.transparent),
+                  ),
+                ),
                 autocorrect: true,
               ),
             ),
@@ -191,241 +203,245 @@ class _MainScreenState extends State<MainScreen> {
                                 height: appsize.height / 14,
                               ),
                               //لیست ساعات اذان
-                              Column(
-                                children: [
-                                  //اذان صبح
-                                  Container(
-                                    height: appsize.height / 20,
-                                    width: appsize.width / 1.4,
-                                    decoration: BoxDecoration(
-                                        gradient: MyGradients.azanListBG,
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            " 🕌 ",
-                                            style: SettingsFonts.emojiIcons,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 8.0),
-                                            child: Text(
-                                              "اذان صبح : ",
+                              SizedBox(
+                                width: 275,
+                                child: Column(
+                                  children: [
+                                    //اذان صبح
+                                    Container(
+                                      height: appsize.height / 20,
+                                      width: appsize.width / 1.4,
+                                      decoration: BoxDecoration(
+                                          gradient: MyGradients.azanListBG,
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(5.0),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              " 🕌 ",
+                                              style: SettingsFonts.emojiIcons,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 8.0),
+                                              child: Text(
+                                                "اذان صبح : ",
+                                                style: SettingsFonts.timetext,
+                                              ),
+                                            ),
+                                            Text(
+                                              subAzan.azansubmodelList[index]
+                                                  .azanSobh
+                                                  .toString(),
                                               style: SettingsFonts.timetext,
                                             ),
-                                          ),
-                                          Text(
-                                            subAzan.azansubmodelList[index]
-                                                .azanSobh
-                                                .toString(),
-                                            style: SettingsFonts.timetext,
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  //طلوع آفتاب
-                                  Container(
-                                    height: appsize.height / 20,
-                                    width: appsize.width / 1.4,
-                                    decoration: BoxDecoration(
-                                        gradient: MyGradients.azanListBG,
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            " 🌅 ",
-                                            style: SettingsFonts.emojiIcons,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 8.0),
-                                            child: Text(
-                                              "طلوع آفتاب ",
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    //طلوع آفتاب
+                                    Container(
+                                      height: appsize.height / 20,
+                                      width: appsize.width / 1.4,
+                                      decoration: BoxDecoration(
+                                          gradient: MyGradients.azanListBG,
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(5.0),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              " 🌅 ",
+                                              style: SettingsFonts.emojiIcons,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 8.0),
+                                              child: Text(
+                                                "طلوع آفتاب ",
+                                                style: SettingsFonts.timetext,
+                                              ),
+                                            ),
+                                            Text(
+                                              subAzan.azansubmodelList[index]
+                                                  .toloeAftab
+                                                  .toString(),
                                               style: SettingsFonts.timetext,
                                             ),
-                                          ),
-                                          Text(
-                                            subAzan.azansubmodelList[index]
-                                                .toloeAftab
-                                                .toString(),
-                                            style: SettingsFonts.timetext,
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  //اذان ظهر
-                                  Container(
-                                    height: appsize.height / 20,
-                                    width: appsize.width / 1.4,
-                                    decoration: BoxDecoration(
-                                        gradient: MyGradients.azanListBG,
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            " ☀️ ",
-                                            style: TextStyle(
-                                                fontSize: appsize.height / 50),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 13.0),
-                                            child: Text(
-                                              "اذان ظهر : ",
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    //اذان ظهر
+                                    Container(
+                                      height: appsize.height / 20,
+                                      width: appsize.width / 1.4,
+                                      decoration: BoxDecoration(
+                                          gradient: MyGradients.azanListBG,
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(5.0),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              " ☀️ ",
+                                              style: TextStyle(
+                                                  fontSize:
+                                                      appsize.height / 50),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 13.0),
+                                              child: Text(
+                                                "اذان ظهر : ",
+                                                style: SettingsFonts.timetext,
+                                              ),
+                                            ),
+                                            Text(
+                                              subAzan.azansubmodelList[index]
+                                                  .azanZohre
+                                                  .toString(),
                                               style: SettingsFonts.timetext,
                                             ),
-                                          ),
-                                          Text(
-                                            subAzan.azansubmodelList[index]
-                                                .azanZohre
-                                                .toString(),
-                                            style: SettingsFonts.timetext,
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  //غروب آفتاب
-                                  Container(
-                                    height: appsize.height / 20,
-                                    width: appsize.width / 1.4,
-                                    decoration: BoxDecoration(
-                                        gradient: MyGradients.azanListBG,
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            " 🌇 ",
-                                            style: SettingsFonts.emojiIcons,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 13.0),
-                                            child: Text(
-                                              "غروب آفتاب : ",
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    //غروب آفتاب
+                                    Container(
+                                      height: appsize.height / 20,
+                                      width: appsize.width / 1.4,
+                                      decoration: BoxDecoration(
+                                          gradient: MyGradients.azanListBG,
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(5.0),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              " 🌇 ",
+                                              style: SettingsFonts.emojiIcons,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 13.0),
+                                              child: Text(
+                                                "غروب آفتاب : ",
+                                                style: SettingsFonts.timetext,
+                                              ),
+                                            ),
+                                            Text(
+                                              subAzan.azansubmodelList[index]
+                                                  .ghorobAftab
+                                                  .toString(),
                                               style: SettingsFonts.timetext,
                                             ),
-                                          ),
-                                          Text(
-                                            subAzan.azansubmodelList[index]
-                                                .ghorobAftab
-                                                .toString(),
-                                            style: SettingsFonts.timetext,
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  // اذان مغرب
-                                  Container(
-                                    height: appsize.height / 20,
-                                    width: appsize.width / 1.4,
-                                    decoration: BoxDecoration(
-                                        gradient: MyGradients.azanListBG,
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            " 🌙 ",
-                                            style: SettingsFonts.emojiIcons,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 13.0),
-                                            child: Text(
-                                              "اذان مغرب : ",
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    // اذان مغرب
+                                    Container(
+                                      height: appsize.height / 20,
+                                      width: appsize.width / 1.4,
+                                      decoration: BoxDecoration(
+                                          gradient: MyGradients.azanListBG,
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(5.0),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              " 🌙 ",
+                                              style: SettingsFonts.emojiIcons,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 13.0),
+                                              child: Text(
+                                                "اذان مغرب : ",
+                                                style: SettingsFonts.timetext,
+                                              ),
+                                            ),
+                                            Text(
+                                              subAzan.azansubmodelList[index]
+                                                  .azanMaghreb
+                                                  .toString(),
                                               style: SettingsFonts.timetext,
                                             ),
-                                          ),
-                                          Text(
-                                            subAzan.azansubmodelList[index]
-                                                .azanMaghreb
-                                                .toString(),
-                                            style: SettingsFonts.timetext,
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  //نیمه شب شرعی
-                                  Container(
-                                    height: appsize.height / 20,
-                                    width: appsize.width / 1.4,
-                                    decoration: BoxDecoration(
-                                        gradient: MyGradients.azanListBG,
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            " 🌌 ",
-                                            style: SettingsFonts.emojiIcons,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 13.0),
-                                            child: Text(
-                                              "نیمه شب شرعی : ",
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    //نیمه شب شرعی
+                                    Container(
+                                      height: appsize.height / 20,
+                                      width: appsize.width / 1.4,
+                                      decoration: BoxDecoration(
+                                          gradient: MyGradients.azanListBG,
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(5.0),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              " 🌌 ",
+                                              style: SettingsFonts.emojiIcons,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 13.0),
+                                              child: Text(
+                                                "نیمه شب شرعی : ",
+                                                style: SettingsFonts.timetext,
+                                              ),
+                                            ),
+                                            Text(
+                                              subAzan.azansubmodelList[index]
+                                                  .nimeShabeSharie
+                                                  .toString(),
                                               style: SettingsFonts.timetext,
                                             ),
-                                          ),
-                                          Text(
-                                            subAzan.azansubmodelList[index]
-                                                .nimeShabeSharie
-                                                .toString(),
-                                            style: SettingsFonts.timetext,
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ],
                           );
